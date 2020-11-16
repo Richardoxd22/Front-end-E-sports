@@ -37,11 +37,11 @@ class EventosDetalle extends Component {
     });
     try {
       const { data: evento } = await axios.get(
-        `http://127.0.0.1:8000/api/eventos/${this.props.match.params.eventoID}`
+        `https://e-sportsbackend.herokuapp.com/api/eventos/${this.props.match.params.eventoID}`
       );
 
       const { data: recomendaciones } = await axios.get(
-        `http://127.0.0.1:8000/api/customqueries/recomendaciones`
+        `https://e-sportsbackend.herokuapp.com/api/customqueries/recomendaciones`
       );
 
       this.setState({

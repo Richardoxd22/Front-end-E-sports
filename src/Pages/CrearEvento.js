@@ -42,7 +42,7 @@ class CrearEvento extends Component {
 
     try {
       const response = Axios.post(
-        `http://127.0.0.1:8000/api/eventos`,
+        `https://e-sportsbackend.herokuapp.com/api/eventos`,
         this.state.evento
       );
       this.setState({
