@@ -67,7 +67,7 @@ class CrearEvento extends Component {
           <Form.Field>
             <label>Titulo del Evento:</label>
             <input
-              placeholder='First Name'
+              placeholder='Titulo del evento'
               name='tituloevento'
               required
               onChange={this.onChange}
@@ -76,7 +76,7 @@ class CrearEvento extends Component {
           <Form.Field>
             <label>Juego del Torneo</label>
             <input
-              placeholder='Last Name'
+              placeholder='Juego del torneo'
               name='juegotorneo'
               required
               onChange={this.onChange}
@@ -86,7 +86,7 @@ class CrearEvento extends Component {
             <label>Información del torneo:</label>
             <br />
             <TextArea
-              placeholder='Ingrese su comentario'
+              placeholder='Informacion del torneo'
               required
               name='informaciontorneo'
               onChange={this.onChange}
@@ -95,7 +95,7 @@ class CrearEvento extends Component {
           <Form.Field>
             <label>Discord del Torneo</label>
             <input
-              placeholder='Last Name'
+              placeholder='discord del Torneo'
               name='discord'
               required
               onChange={this.onChange}
@@ -104,7 +104,7 @@ class CrearEvento extends Component {
           <Form.Field>
             <label>Fecha del Torneo</label>
             <input
-              placeholder='Last Name'
+              placeholder='Fecha del Torneo'
               name='eventofecha'
               type='date'
               required
@@ -114,7 +114,7 @@ class CrearEvento extends Component {
           <Form.Field>
             <label>Imagen del Torneo</label>
             <input
-              placeholder='Last Name'
+              placeholder='Imagen del Torneo'
               name='eventoimagen'
               required
               onChange={this.onChange}
