@@ -52,19 +52,24 @@ const Footer = () => {
           </MDBCol>
           <MDBCol md='4'>
             <div>
-              <a href='/' style={{ color: 'black' }}>
+              <a  rel='noopener noreferrer'
+                  target='_blank' href='https://www.facebook.com/' style={{ color: 'black' }}>
                 <i className='facebook icon' style={{ fontSize: 40 }}></i>
               </a>
-              <a href='/' style={{ color: 'black' }}>
+              <a  rel='noopener noreferrer'
+                  target='_blank' href='http://www.twitter.com/' style={{ color: 'black' }}>
                 <i className='twitter icon' style={{ fontSize: 40 }}></i>
               </a>
-              <a href='/' style={{ color: 'black' }}>
+              <a  rel='noopener noreferrer'
+                  target='_blank' href='https://www.youtube.com/' style={{ color: 'black' }}>
                 <i className='youtube icon' style={{ fontSize: 40 }}></i>
               </a>
-              <a href='/' style={{ color: 'black' }}>
+              <a  rel='noopener noreferrer'
+                  target='_blank' href='http://www.github.com/' style={{ color: 'black' }}>
                 <i className='github icon' style={{ fontSize: 40 }}></i>
               </a>
-              <a href='/' style={{ color: 'black' }}>
+              <a  rel='noopener noreferrer'
+                  target='_blank' href='/' style={{ color: 'black' }}>
                 <i className='google plus icon' style={{ fontSize: 40 }}></i>
               </a>
             </div>

@@ -38,7 +38,7 @@ const NavBar = () => {
     <div className='nav-container'>
       <Navbar variant='dark' expand='lg' style={EstiloNavbar}>
         <Container>
-          <NavbarBrand href='#home'>
+          <NavbarBrand href='/'>
             <Image src={Icono} width={70} height={60}></Image>
           </NavbarBrand>
           <NavbarToggler onClick={toggle} />
