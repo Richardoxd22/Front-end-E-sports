@@ -61,15 +61,15 @@ class Noticias extends Component {
     });
     try {
       const { data: noticia } = await axios.get(
-        `https://e-sportsbackend.herokuapp.com/api/noticias/${this.props.URLParams}`
+        `https://e-sports1.herokuapp.com/api/noticias/${this.props.URLParams}`
       );
 
       const { data: recomendaciones } = await axios.get(
-        `https://e-sportsbackend.herokuapp.com/api/customqueries/recomendaciones`
+        `https://e-sports1.herokuapp.com/api/customqueries/recomendaciones`
       );
 
       const { data: comentarios } = await axios.get(
-        `https://e-sportsbackend.herokuapp.com/api/customqueries/comentarios/${this.props.URLParams}`
+        `https://e-sports1.herokuapp.com/api/customqueries/comentarios/${this.props.URLParams}`
       );
       this.setState({
         noticia: noticia,
@@ -99,7 +99,7 @@ class Noticias extends Component {
 
     try {
       const response = await axios.post(
-        'https://e-sportsbackend.herokuapp.com/api/comentarios',
+        'https://e-sports1.herokuapp.com/api/comentarios',
         this.state.comentario
       );
       this.setState({

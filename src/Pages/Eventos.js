@@ -24,7 +24,7 @@ const Eventos = ({ noticiasOrdenadas }) => {
     setloading(true);
     try {
       const { data } = await axios.get(
-        `https://e-sportsbackend.herokuapp.com/api/customqueries/eventos?page=${pagina}`
+        `https://e-sports1.herokuapp.com/api/customqueries/eventos?page=${pagina}`
       );
       seteventos(data.results);
       setpaginasTotales(data.info.pages);

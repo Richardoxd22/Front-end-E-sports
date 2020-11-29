@@ -25,7 +25,7 @@ const MainPage = ({ noticiasOrdenadas }) => {
     setloading(true);
     try {
       const { data } = await axios.get(
-        `https://e-sportsbackend.herokuapp.com/api/customqueries/noticias?page=${pagina}`
+        `https://e-sports1.herokuapp.com/api/customqueries/noticias?page=${pagina}`
       );
       setnoticias(data.results);
       setpaginasTotales(data.info.pages);
@@ -44,14 +44,14 @@ const MainPage = ({ noticiasOrdenadas }) => {
     if (user) {
       try {
         const { data } = await axios.get(
-          `https://e-sportsbackend.herokuapp.com/api/usuarios/${splituser(
+          `https://e-sports1.herokuapp.com/api/usuarios/${splituser(
             user.sub
           )}`
         );
         if (data === null) {
           try {
             const response = await axios.post(
-              'https://e-sportsbackend.herokuapp.com/api/usuarios',
+              'https://e-sports1.herokuapp.com/api/usuarios',
               {
                 auth: splituser(user.sub),
                 nickname: user.nickname,

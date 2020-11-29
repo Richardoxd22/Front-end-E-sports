@@ -4,6 +4,10 @@ import { Button, Checkbox, Form, FormField, TextArea } from 'semantic-ui-react';
 import Error from '../Componentes/Error/Error';
 import Loader from '../Componentes/Spinner/Spinner';
 class CrearEvento extends Component {
+  /*MessageClicked(event){
+    event.preventDefault()
+    alert('Su ingreso fue correcto');
+  }*/
   constructor(props) {
     super(props);
     this.state = {
@@ -42,7 +46,7 @@ class CrearEvento extends Component {
 
     try {
       const response = Axios.post(
-        `https://e-sportsbackend.herokuapp.com/api/eventos`,
+        `https://e-sports1.herokuapp.com/api/eventos`,
         this.state.evento
       );
       this.setState({
@@ -68,7 +72,7 @@ class CrearEvento extends Component {
           <Form.Field>
             <label>Titulo del Evento:</label>
             <input
-              placeholder='First Name'
+              placeholder='Titulo del evento'
               name='tituloevento'
               required
               onChange={this.onChange}
@@ -77,7 +81,7 @@ class CrearEvento extends Component {
           <Form.Field>
             <label>Juego del Torneo</label>
             <input
-              placeholder='Last Name'
+              placeholder='Juego del torneo'
               name='juegotorneo'
               required
               onChange={this.onChange}
@@ -87,7 +91,7 @@ class CrearEvento extends Component {
             <label>Información del torneo:</label>
             <br />
             <TextArea
-              placeholder='Ingrese su comentario'
+              placeholder='Informacion del torneo'
               required
               name='informaciontorneo'
               onChange={this.onChange}
@@ -96,7 +100,7 @@ class CrearEvento extends Component {
           <Form.Field>
             <label>Discord del Torneo</label>
             <input
-              placeholder='Last Name'
+              placeholder='discord del Torneo'
               name='discord'
               required
               onChange={this.onChange}
@@ -105,7 +109,7 @@ class CrearEvento extends Component {
           <Form.Field>
             <label>Fecha del Torneo</label>
             <input
-              placeholder='Last Name'
+              placeholder='Fecha del Torneo'
               name='eventofecha'
               type='date'
               required
@@ -115,13 +119,13 @@ class CrearEvento extends Component {
           <Form.Field>
             <label>Imagen del Torneo</label>
             <input
-              placeholder='Last Name'
+              placeholder='Elegir una imagen y copiar el vinculo de imagen con extensión .jpg'
               name='eventoimagen'
               required
               onChange={this.onChange}
             />
           </Form.Field>
-          <Button type='submit'>Submit</Button>
+          <Button type='submit'>Ingresar</Button>            
         </Form>
       </div>
     );

@@ -38,7 +38,7 @@ const NavBar = () => {
     <div className='nav-container'>
       <Navbar variant='dark' expand='lg' style={EstiloNavbar}>
         <Container>
-          <NavbarBrand href='#home'>
+          <NavbarBrand href='/'>
             <Image src={Icono} width={70} height={60}></Image>
           </NavbarBrand>
           <NavbarToggler onClick={toggle} />
@@ -94,7 +94,7 @@ const NavBar = () => {
                     color='primary'
                     className='btn-margin'
                     onClick={() => loginWithRedirect()}>
-                    Log in
+                    Iniciar Sesión
                   </Button>
                 </NavItem>
               )}
@@ -115,13 +115,12 @@ const NavBar = () => {
                       to='/profile'
                       className='dropdown-profile'
                       activeClassName='router-link-exact-active'>
-                      <FontAwesomeIcon icon='user' className='mr-3' /> Profile
+                      <FontAwesomeIcon icon='user' className='mr-3' /> Perfil
                     </DropdownItem>
                     <DropdownItem
                       id='qsLogoutBtn'
                       onClick={() => logoutWithRedirect()}>
-                      <FontAwesomeIcon icon='power-off' className='mr-3' /> Log
-                      out
+                      <FontAwesomeIcon icon='power-off' className='mr-3' /> Cerrar Sesión                      
                     </DropdownItem>
                   </DropdownMenu>
                 </UncontrolledDropdown>
@@ -135,7 +134,7 @@ const NavBar = () => {
                     color='primary'
                     block
                     onClick={() => loginWithRedirect({})}>
-                    Log in
+                    Iniciar Sesión
                   </Button>
                 </NavItem>
               </Nav>
@@ -160,8 +159,8 @@ const NavBar = () => {
                   <FontAwesomeIcon icon='user' className='mr-3' />
                   <RouterNavLink
                     to='/profile'
-                    activeClassName='router-link-exact-active'>
-                    Profile
+                    activeClassName='router-link-exact-active'>                    
+                    Perfil                                        
                   </RouterNavLink>
                 </NavItem>
                 <NavItem>
@@ -170,7 +169,7 @@ const NavBar = () => {
                     to='/'
                     id='qsLogoutBtn'
                     onClick={() => logoutWithRedirect()}>
-                    Log out
+                    Cerrar Sesión
                   </RouterNavLink>
                 </NavItem>
               </Nav>
