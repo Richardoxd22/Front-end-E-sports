@@ -21,6 +21,7 @@ import Evento from './Pages/Eventos';
 import EventoDetalle from './Pages/EventosDetalle';
 import DescripcionGlobal from './Componentes/DescripcionGlobal/DescripcionGlobal';
 import CrearEvento from './Pages/HOCEvento';
+import Error from './Componentes/Error/Error';
 initFontAwesome();
 
 const App = () => {
@@ -43,10 +44,12 @@ const App = () => {
         <Route path='/noticia/:noticiaID' exact component={Noticia} />
         <Route path='/evento/:eventoID' exact component={EventoDetalle} />
         <Route path='/eventos' exact component={Evento} />
+
         <PrivateRoute
           path='/crearEvento'
           component={CrearEvento}></PrivateRoute>
         <PrivateRoute path='/perfil' component={Perfil}></PrivateRoute>
+        <Route exact component={Error} />
       </Switch>
 
       <Footer />

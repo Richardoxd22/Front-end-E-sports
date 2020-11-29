@@ -59,6 +59,7 @@ class CrearEvento extends Component {
   };
 
   render() {
+    console.log(this.state.evento);
     if (this.state.loading) return <Loader />;
     if (this.state.error) return <Error />;
     return (
