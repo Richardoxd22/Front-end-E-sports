@@ -4,6 +4,10 @@ import { Button, Checkbox, Form, FormField, TextArea } from 'semantic-ui-react';
 import Error from '../Componentes/Error/Error';
 import Loader from '../Componentes/Spinner/Spinner';
 class CrearEvento extends Component {
+  /*MessageClicked(event){
+    event.preventDefault()
+    alert('Su ingreso fue correcto');
+  }*/
   constructor(props) {
     super(props);
     this.state = {
@@ -114,13 +118,13 @@ class CrearEvento extends Component {
           <Form.Field>
             <label>Imagen del Torneo</label>
             <input
-              placeholder='Imagen del Torneo'
+              placeholder='Elegir una imagen y copiar el vinculo de imagen con extensión .jpg'
               name='eventoimagen'
               required
               onChange={this.onChange}
             />
           </Form.Field>
-          <Button type='submit'>Submit</Button>
+          <Button type='submit'>Ingresar</Button>            
         </Form>
       </div>
     );
