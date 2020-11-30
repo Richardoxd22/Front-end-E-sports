@@ -40,7 +40,7 @@
     "bootstrap": "4.5.3",
     "mdbreact": "4.27.0",
     "react-bootstrap": "1.4.0",
-    "semantic-ui-css": "2.4.1",
+    "semantic-ui-css": "2.2.14",
     "semantic-ui-react": "2.0.1",
     "styled-components": "5.2.1",
     "@testing-library/react": "^10.3.0",

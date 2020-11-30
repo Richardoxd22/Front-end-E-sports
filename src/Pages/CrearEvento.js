@@ -1,18 +1,28 @@
 import Axios from 'axios';
 import React, { Component } from 'react';
-import { Button, Checkbox, Form, FormField, TextArea } from 'semantic-ui-react';
+import {
+  Button,
+  Checkbox,
+  Form,
+  FormField,
+  TextArea,
+  Modal,
+  Icon,
+  Header,
+} from 'semantic-ui-react';
+import 'semantic-ui-css/semantic.min.css';
 import Error from '../Componentes/Error/Error';
 import Loader from '../Componentes/Spinner/Spinner';
+import { withRouter } from 'react-router-dom';
+
 class CrearEvento extends Component {
-  /*MessageClicked(event){
-    event.preventDefault()
-    alert('Su ingreso fue correcto');
-  }*/
   constructor(props) {
     super(props);
     this.state = {
       loading: false,
       error: false,
+      eventoIngresado: false,
+      eventoIngresadoFail: false,
       evento: {
         tituloevento: '',
         juegotorneo: '',
@@ -38,32 +48,43 @@ class CrearEvento extends Component {
     });
   };
   handleSubmit = async (evt) => {
-    evt.preventDefault();
     this.setState({
       loading: true,
       error: null,
     });
 
     try {
-      const response = Axios.post(
+      const response = await Axios.post(
         `https://e-sports1.herokuapp.com/api/eventos`,
         this.state.evento
       );
       this.setState({
         loading: false,
         error: null,
+        eventoIngresado: true,
       });
     } catch (error) {
-      console.log(error);
       this.setState({
         loading: false,
-        error: error,
+
+        eventoIngresadoFail: true,
       });
     }
   };
 
+  modalOnCloseSubmit = () => {
+    this.setState({
+      eventoIngresado: false,
+    });
+  };
+
+  modalOnCloseError = () => {
+    this.setState({
+      eventoIngresadoFail: false,
+    });
+  };
+
   render() {
-    console.log(this.state.evento);
     if (this.state.loading) return <Loader />;
     if (this.state.error) return <Error />;
     return (
@@ -125,11 +146,56 @@ class CrearEvento extends Component {
               onChange={this.onChange}
             />
           </Form.Field>
-          <Button type='submit'>Ingresar</Button>            
+          <Button type='submit'>Ingresar</Button>
         </Form>
+        {/*Modal para el ingreso exitoso*/}
+        <Modal
+          closeIcon
+          open={this.state.eventoIngresado}
+          size='small'
+          style={{ height: 200 }}
+          centered={true}>
+          <Header
+            icon='check circle'
+            content='Evento ingresado satisfactoriamente!'
+          />
+          <Modal.Content>
+            <p>
+              Tu evento se ingresó correctamente, revisa la página de eventos.
+            </p>
+          </Modal.Content>
+          <Modal.Actions>
+            <Button color='green' onClick={this.modalOnCloseSubmit}>
+              <Icon name='smile outline' /> Ok!
+            </Button>
+          </Modal.Actions>
+        </Modal>
+        {/*Modal para el ingreso fallido */}
+        <Modal
+          closeIcon
+          open={this.state.eventoIngresadoFail}
+          size='small'
+          style={{ height: 200 }}
+          centered={true}>
+          <Header
+            icon='remove circle'
+            content='Fallo en el ingreso del evento!'
+          />
+          <Modal.Content>
+            <p>
+              Tu evento no se pudo guardar, revisa los datos ingresados o
+              contacta con el administrador.
+            </p>
+          </Modal.Content>
+          <Modal.Actions>
+            <Button color='red' onClick={this.modalOnCloseError}>
+              <Icon name='remove circle' /> Error!
+            </Button>
+          </Modal.Actions>
+        </Modal>
       </div>
     );
   }
 }
 
-export default CrearEvento;
+export default withRouter(CrearEvento);

@@ -112,7 +112,7 @@ const NavBar = () => {
                     <DropdownItem header>{user.name}</DropdownItem>
                     <DropdownItem
                       tag={RouterNavLink}
-                      to='/profile'
+                      to='/perfil'
                       className='dropdown-profile'
                       activeClassName='router-link-exact-active'>
                       <FontAwesomeIcon icon='user' className='mr-3' /> Perfil
@@ -120,7 +120,8 @@ const NavBar = () => {
                     <DropdownItem
                       id='qsLogoutBtn'
                       onClick={() => logoutWithRedirect()}>
-                      <FontAwesomeIcon icon='power-off' className='mr-3' /> Cerrar Sesión                      
+                      <FontAwesomeIcon icon='power-off' className='mr-3' />{' '}
+                      Cerrar Sesión
                     </DropdownItem>
                   </DropdownMenu>
                 </UncontrolledDropdown>
@@ -159,8 +160,8 @@ const NavBar = () => {
                   <FontAwesomeIcon icon='user' className='mr-3' />
                   <RouterNavLink
                     to='/profile'
-                    activeClassName='router-link-exact-active'>                    
-                    Perfil                                        
+                    activeClassName='router-link-exact-active'>
+                    Perfil
                   </RouterNavLink>
                 </NavItem>
                 <NavItem>
